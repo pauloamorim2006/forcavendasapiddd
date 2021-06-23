@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
+using ERP.Application.Services;
 using ERP.Domain.Repositories;
-using ERP.Domain.Services;
 using ERP.Infra.Repository;
 using Moq.AutoMock;
 using System;

@@ -1,5 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
+using ERP.Application.Services;
+using ERP.Domain.Models;
 using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
@@ -40,7 +42,7 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var list = new Faker<ERP.Domain.Models.Cidade>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.Cidade
+                .CustomInstantiator(f => new Cidade
                 {
                     CodigoIbge = f.Random.Number(),
                     Descricao = f.Address.City(),

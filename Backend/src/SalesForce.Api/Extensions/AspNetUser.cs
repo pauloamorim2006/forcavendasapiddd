@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ERP.Domain.Services;
+using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Security.Claims;
-using ERP.Domain.Services.Intefaces;
-using Microsoft.AspNetCore.Http;
 
 namespace ERP.Api.Extensions
 {

@@ -1,5 +1,5 @@
 ﻿using ERP.Core.Notificacoes;
-using ERP.Domain.Services.Intefaces;
+using ERP.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;

@@ -1,5 +1,5 @@
-﻿using ERP.Domain.Services.Intefaces;
-using ERP.Domain.Services;
+﻿using ERP.Application.Services;
+using ERP.Domain.Repositories;
 using ERP.Domain.Tests.Providers;
 using Moq;
 using System;
@@ -7,7 +7,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
-using ERP.Domain.Repositories;
 
 namespace ERP.Domain.Tests.Services
 {

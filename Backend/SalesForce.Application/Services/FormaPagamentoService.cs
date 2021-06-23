@@ -1,15 +1,15 @@
-﻿using ERP.Domain.Services.Intefaces;
+﻿using ERP.Core.Notificacoes;
+using ERP.Core.Services;
 using ERP.Domain.Models;
 using ERP.Domain.Models.Validations;
 using ERP.Domain.Repositories;
+using ERP.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ERP.Core.Services;
-using ERP.Core.Notificacoes;
 
-namespace ERP.Domain.Services
+namespace ERP.Application.Services
 {
     public class FormaPagamentoService : BaseService, IFormaPagamentoService
     {

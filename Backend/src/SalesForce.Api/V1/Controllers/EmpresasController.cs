@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using ERP.Api.Controllers;
-using ERP.Api.ViewModels;
-using ERP.Domain.Services.Intefaces;
+using ERP.Application.ViewModels;
+using ERP.Core.Notificacoes;
 using ERP.Domain.Models;
+using ERP.Domain.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using ERP.Core.Notificacoes;
 
 namespace ERP.Api.V1.Controllers
 {

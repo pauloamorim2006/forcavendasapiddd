@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ERP.Api.ViewModels
+namespace ERP.Application.ViewModels
 {
     public class FormaPagamentoViewModel
     {

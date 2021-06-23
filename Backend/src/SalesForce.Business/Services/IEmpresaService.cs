@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP.Domain.Services.Intefaces
+namespace ERP.Domain.Services
 {
     public interface IEmpresaService
     {

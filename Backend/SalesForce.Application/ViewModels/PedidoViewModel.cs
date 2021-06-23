@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace ERP.Api.ViewModels
+namespace ERP.Application.ViewModels
 {
     public class PedidoViewModel
     {

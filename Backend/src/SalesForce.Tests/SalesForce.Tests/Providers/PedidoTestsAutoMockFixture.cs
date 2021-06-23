@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
+using ERP.Application.Services;
 using ERP.Domain.Models;
-using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;

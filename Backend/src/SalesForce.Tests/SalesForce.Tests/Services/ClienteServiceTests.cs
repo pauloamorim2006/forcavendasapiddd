@@ -1,5 +1,5 @@
-﻿using ERP.Domain.Repositories;
-using ERP.Domain.Services;
+﻿using ERP.Application.Services;
+using ERP.Domain.Repositories;
 using ERP.Domain.Tests.Providers;
 using Moq;
 using System;

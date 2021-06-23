@@ -1,7 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
-using ERP.Domain.Services;
+using ERP.Application.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;

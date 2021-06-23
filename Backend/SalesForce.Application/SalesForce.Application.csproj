@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SalesForce.Core\SalesForce.Core.csproj" />
+    <ProjectReference Include="..\src\SalesForce.Business\SalesForce.Domain.csproj" />
+    <ProjectReference Include="..\src\SalesForce.Data\SalesForce.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

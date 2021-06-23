@@ -1,11 +1,10 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Domain.Services;
+using ERP.Application.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xunit;
 
 namespace ERP.Domain.Tests.Providers

@@ -1,5 +1,6 @@
 ﻿using ERP.Api.Extensions;
-using ERP.Domain.Services.Intefaces;
+using ERP.Application.Services;
+using ERP.Core.Notificacoes;
 using ERP.Domain.Repositories;
 using ERP.Domain.Services;
 using ERP.Infra.Context;
@@ -8,7 +9,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using ERP.Core.Notificacoes;
 
 namespace ERP.Api.Configuration
 {

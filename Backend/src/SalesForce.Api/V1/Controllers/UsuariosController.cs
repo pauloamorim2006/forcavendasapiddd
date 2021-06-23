@@ -1,6 +1,6 @@
 ﻿using ERP.Api.Controllers;
 using ERP.Core.Notificacoes;
-using ERP.Domain.Services.Intefaces;
+using ERP.Domain.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

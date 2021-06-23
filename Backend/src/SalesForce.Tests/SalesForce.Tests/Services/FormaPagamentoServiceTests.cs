@@ -1,6 +1,6 @@
-﻿using ERP.Business.Intefaces;
-using ERP.Business.Services;
-using ERP.Business.Tests.Providers;
+﻿using ERP.Domain.Repositories;
+using ERP.Domain.Services;
+using ERP.Domain.Tests.Providers;
 using Moq;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ERP.Business.Tests.Services
+namespace ERP.Domain.Tests.Services
 {
     [Collection(nameof(FormaPagamentoAutoMockerCollection))]
     public class FormaPagamentoServiceTests

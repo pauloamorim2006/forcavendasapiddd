@@ -1,6 +1,6 @@
-﻿using ERP.Business.Intefaces;
-using ERP.Business.Services;
-using ERP.Business.Tests.Providers;
+﻿using ERP.Domain.Repositories;
+using ERP.Domain.Services;
+using ERP.Domain.Tests.Providers;
 using Moq;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ERP.Business.Tests.Services
+namespace ERP.Domain.Tests.Services
 {
     [Collection(nameof(CondicaoPagamentoAutoMockerCollection))]
     public class CondicaoPagamentoServiceTests
@@ -241,7 +241,7 @@ namespace ERP.Business.Tests.Services
         public async void CondicaoPagamentoService_Buscar_DeveExecutarComSucesso()
         {
             // Arrange
-            Expression<Func<ERP.Business.Models.CondicaoPagamento, bool>> predicate = (x) => x.Descricao != string.Empty;
+            Expression<Func<ERP.Domain.Models.CondicaoPagamento, bool>> predicate = (x) => x.Descricao != string.Empty;
             _condicaoPagamentoTestsAutoMockerFixture.Mocker.GetMock<ICondicaoPagamentoRepository>().Setup(c => c.Buscar(predicate))
                 .Returns(Task.FromResult(_condicaoPagamentoTestsAutoMockerFixture.ObterVariados()));
 

@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ERP.Business.Models;
+using ERP.Domain.Models;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
-namespace ERP.Data.Context
+namespace ERP.Infra.Context
 {
     public class SalesForceDbContext : DbContext
     {

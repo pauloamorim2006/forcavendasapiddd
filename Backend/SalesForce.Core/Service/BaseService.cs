@@ -1,10 +1,9 @@
-﻿using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Business.Notificacoes;
+﻿using ERP.Core.DomainObjects;
+using ERP.Core.Notificacoes;
 using FluentValidation;
 using FluentValidation.Results;
 
-namespace ERP.Business.Services
+namespace ERP.Core.Services
 {
     public abstract class BaseService
     {

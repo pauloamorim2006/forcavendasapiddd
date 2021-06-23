@@ -1,7 +1,8 @@
-﻿using ERP.Business.Models.Validations;
+﻿using ERP.Core.DomainObjects;
+using ERP.Domain.Models.Validations;
 using System;
 
-namespace ERP.Business.Models
+namespace ERP.Domain.Models
 {
     public class Cliente: Entity
     {

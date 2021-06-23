@@ -1,10 +1,10 @@
-﻿using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Data.Context;
+﻿using ERP.Domain.Models;
+using ERP.Domain.Repositories;
+using ERP.Infra.Context;
 using System;
 using System.Linq;
 
-namespace ERP.Data.Repository
+namespace ERP.Infra.Repository
 {
     public class FormaPagamentoRepository : Repository<FormaPagamento>, IFormaPagamentoRepository
     {

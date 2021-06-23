@@ -1,10 +1,10 @@
-﻿using System;
+﻿using ERP.Core.DomainObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ERP.Business.Models;
 
-namespace ERP.Business.Intefaces
+namespace ERP.Core.Data
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : Entity
     {

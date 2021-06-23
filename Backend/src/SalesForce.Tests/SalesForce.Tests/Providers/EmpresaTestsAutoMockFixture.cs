@@ -1,14 +1,14 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
-using ERP.Business.Services;
+using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Business.Tests.Providers
+namespace ERP.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(EmpresaAutoMockerCollection))]
     public class EmpresaAutoMockerCollection : ICollectionFixture<EmpresaTestsAutoMockerFixture>
@@ -20,14 +20,14 @@ namespace ERP.Business.Tests.Providers
         public EmpresaService EmpresaService;
         public AutoMocker Mocker;
 
-        public ERP.Business.Models.Empresa GerarRegistroValido()
+        public ERP.Domain.Models.Empresa GerarRegistroValido()
         {
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Business.Models.Empresa> ObterVariados()
+        public IEnumerable<ERP.Domain.Models.Empresa> ObterVariados()
         {
-            var list = new List<ERP.Business.Models.Empresa>();
+            var list = new List<ERP.Domain.Models.Empresa>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());
@@ -35,12 +35,12 @@ namespace ERP.Business.Tests.Providers
             return list;
         }
 
-        public IEnumerable<ERP.Business.Models.Empresa> GerarList(int quantidade, bool ativo)
+        public IEnumerable<ERP.Domain.Models.Empresa> GerarList(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<ERP.Business.Models.Empresa>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.Empresa
+            var list = new Faker<ERP.Domain.Models.Empresa>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.Empresa
                 {
                     Nome = f.Name.FullName(genero),
                     Fantasia = f.Name.FullName(genero),
@@ -64,12 +64,12 @@ namespace ERP.Business.Tests.Providers
             return list.Generate(quantidade);
         }
 
-        public ERP.Business.Models.Empresa GerarRegistroInvalido()
+        public ERP.Domain.Models.Empresa GerarRegistroInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var objeto = new Faker<ERP.Business.Models.Empresa>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.Empresa());
+            var objeto = new Faker<ERP.Domain.Models.Empresa>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.Empresa());
 
             return objeto;
         }

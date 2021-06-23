@@ -1,13 +1,12 @@
 ﻿using FluentValidation.Results;
 using System;
 
-namespace ERP.Business.Models
+namespace ERP.Core.DomainObjects
 {
     public abstract class Entity
     {
         protected Entity()
         {
-            Id = Guid.NewGuid();
         }
         public Guid Id { get; set; }
         public ValidationResult ValidationResult { get; set; }

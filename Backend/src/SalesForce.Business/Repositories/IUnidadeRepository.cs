@@ -1,9 +1,10 @@
-﻿using ERP.Business.Models;
+﻿using ERP.Core.Data;
+using ERP.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ERP.Business.Intefaces
+namespace ERP.Domain.Repositories
 {
     public interface IUnidadeRepository : IRepository<Unidade>
     {

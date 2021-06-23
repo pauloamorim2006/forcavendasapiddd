@@ -1,14 +1,14 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
-using ERP.Business.Services;
+using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Business.Tests.Providers
+namespace ERP.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(ClienteAutoMockerCollection))]
     public class ClienteAutoMockerCollection : ICollectionFixture<ClienteTestsAutoMockerFixture>
@@ -20,14 +20,14 @@ namespace ERP.Business.Tests.Providers
         public ClienteService ClienteService;
         public AutoMocker Mocker;
 
-        public ERP.Business.Models.Cliente GerarClienteValido()
+        public ERP.Domain.Models.Cliente GerarClienteValido()
         {
             return GerarClientes(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Business.Models.Cliente> ObterClientesVariados()
+        public IEnumerable<ERP.Domain.Models.Cliente> ObterClientesVariados()
         {
-            var clientes = new List<ERP.Business.Models.Cliente>();
+            var clientes = new List<ERP.Domain.Models.Cliente>();
 
             clientes.AddRange(GerarClientes(50, true).ToList());
             clientes.AddRange(GerarClientes(50, false).ToList());
@@ -35,12 +35,12 @@ namespace ERP.Business.Tests.Providers
             return clientes;
         }
 
-        public IEnumerable<ERP.Business.Models.Cliente> GerarClientes(int quantidade, bool ativo)
+        public IEnumerable<ERP.Domain.Models.Cliente> GerarClientes(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var clientes = new Faker<ERP.Business.Models.Cliente>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.Cliente
+            var clientes = new Faker<ERP.Domain.Models.Cliente>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.Cliente
                 {
                     Nome = f.Name.FullName(genero),
                     CnpjCpfDi = f.Company.Cnpj(),
@@ -63,12 +63,12 @@ namespace ERP.Business.Tests.Providers
             return clientes.Generate(quantidade);
         }
 
-        public ERP.Business.Models.Cliente GerarClienteInvalido()
+        public ERP.Domain.Models.Cliente GerarClienteInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var cliente = new Faker<ERP.Business.Models.Cliente>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.Cliente
+            var cliente = new Faker<ERP.Domain.Models.Cliente>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.Cliente
                 {
                     Nome = string.Empty,
                     CnpjCpfDi = string.Empty,

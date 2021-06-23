@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using ERP.Business.Intefaces;
-using ERP.Business.Notificacoes;
+﻿using ERP.Core.Notificacoes;
+using ERP.Domain.Services.Intefaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
+using System.Linq;
 
 namespace ERP.Api.Controllers
 {

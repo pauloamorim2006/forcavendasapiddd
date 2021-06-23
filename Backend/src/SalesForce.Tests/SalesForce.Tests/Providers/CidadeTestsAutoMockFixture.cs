@@ -1,6 +1,6 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Business.Services;
+using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using Xunit;
 
-namespace ERP.Business.Tests.Providers
+namespace ERP.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(CidadeAutoMockerCollection))]
     public class CidadeAutoMockerCollection : ICollectionFixture<CidadeTestsAutoMockerFixture>
@@ -20,14 +20,14 @@ namespace ERP.Business.Tests.Providers
         public CidadeService CidadeService;
         public AutoMocker Mocker;
 
-        public ERP.Business.Models.Cidade GerarRegistroValido()
+        public ERP.Domain.Models.Cidade GerarRegistroValido()
         {
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Business.Models.Cidade> ObterVariados()
+        public IEnumerable<ERP.Domain.Models.Cidade> ObterVariados()
         {
-            var list = new List<ERP.Business.Models.Cidade>();
+            var list = new List<ERP.Domain.Models.Cidade>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());
@@ -35,12 +35,12 @@ namespace ERP.Business.Tests.Providers
             return list;
         }
 
-        public IEnumerable<ERP.Business.Models.Cidade> GerarList(int quantidade, bool ativo)
+        public IEnumerable<ERP.Domain.Models.Cidade> GerarList(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<ERP.Business.Models.Cidade>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.Cidade
+            var list = new Faker<ERP.Domain.Models.Cidade>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.Cidade
                 {
                     CodigoIbge = f.Random.Number(),
                     Descricao = f.Address.City(),
@@ -50,12 +50,12 @@ namespace ERP.Business.Tests.Providers
             return list.Generate(quantidade);
         }
 
-        public ERP.Business.Models.Cidade GerarRegistroInvalido()
+        public ERP.Domain.Models.Cidade GerarRegistroInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var objeto = new Faker<ERP.Business.Models.Cidade>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.Cidade
+            var objeto = new Faker<ERP.Domain.Models.Cidade>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.Cidade
                 {
                     CodigoIbge = f.Random.Number(),
                     Descricao = string.Empty,

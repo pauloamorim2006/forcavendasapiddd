@@ -1,8 +1,8 @@
-﻿using ERP.Business.Models;
+﻿using ERP.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ERP.Data.Mappings
+namespace ERP.Infra.Mappings
 {
     public class CidadeMapping : IEntityTypeConfiguration<Cidade>
     {

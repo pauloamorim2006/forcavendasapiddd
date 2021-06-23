@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
-namespace ERP.Business.Models
+namespace ERP.Domain.Models
 {
     public enum Estado
     {

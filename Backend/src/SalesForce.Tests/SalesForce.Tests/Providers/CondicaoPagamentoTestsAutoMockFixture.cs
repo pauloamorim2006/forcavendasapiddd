@@ -1,15 +1,15 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Business.Intefaces;
-using ERP.Business.Services;
-using ERP.Data.Repository;
+using ERP.Domain.Repositories;
+using ERP.Domain.Services;
+using ERP.Infra.Repository;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Business.Tests.Providers
+namespace ERP.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(CondicaoPagamentoAutoMockerCollection))]
     public class CondicaoPagamentoAutoMockerCollection : ICollectionFixture<CondicaoPagamentoTestsAutoMockerFixture>
@@ -22,14 +22,14 @@ namespace ERP.Business.Tests.Providers
         public CondicaoPagamentoRepository CondicaoPagamentoRepository;
         public AutoMocker Mocker;
 
-        public ERP.Business.Models.CondicaoPagamento GerarRegistroValido()
+        public ERP.Domain.Models.CondicaoPagamento GerarRegistroValido()
         {
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Business.Models.CondicaoPagamento> ObterVariados()
+        public IEnumerable<ERP.Domain.Models.CondicaoPagamento> ObterVariados()
         {
-            var list = new List<ERP.Business.Models.CondicaoPagamento>();
+            var list = new List<ERP.Domain.Models.CondicaoPagamento>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());
@@ -37,12 +37,12 @@ namespace ERP.Business.Tests.Providers
             return list;
         }
 
-        public IEnumerable<ERP.Business.Models.CondicaoPagamento> GerarList(int quantidade, bool ativo)
+        public IEnumerable<ERP.Domain.Models.CondicaoPagamento> GerarList(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<ERP.Business.Models.CondicaoPagamento>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.CondicaoPagamento
+            var list = new Faker<ERP.Domain.Models.CondicaoPagamento>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.CondicaoPagamento
                 {
                     Nome = f.Name.FullName(genero),
                     Descricao = f.Name.FullName(genero)
@@ -51,12 +51,12 @@ namespace ERP.Business.Tests.Providers
             return list.Generate(quantidade);
         }
 
-        public ERP.Business.Models.CondicaoPagamento GerarRegistroInvalido()
+        public ERP.Domain.Models.CondicaoPagamento GerarRegistroInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var objeto = new Faker<ERP.Business.Models.CondicaoPagamento>("pt_BR")
-                .CustomInstantiator(f => new ERP.Business.Models.CondicaoPagamento
+            var objeto = new Faker<ERP.Domain.Models.CondicaoPagamento>("pt_BR")
+                .CustomInstantiator(f => new ERP.Domain.Models.CondicaoPagamento
                 {
                     Nome = string.Empty,
                     Descricao = string.Empty

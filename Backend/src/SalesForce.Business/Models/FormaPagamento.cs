@@ -1,9 +1,7 @@
-﻿using ERP.Business.Models.Validations;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ERP.Core.DomainObjects;
+using ERP.Domain.Models.Validations;
 
-namespace ERP.Business.Models
+namespace ERP.Domain.Models
 {
     public class FormaPagamento: Entity
     {

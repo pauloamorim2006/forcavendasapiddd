@@ -1,13 +1,13 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Business.Services;
+using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Business.Tests.Providers
+namespace ERP.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(FormaPagamentoAutoMockerCollection))]
     public class FormaPagamentoAutoMockerCollection : ICollectionFixture<FormaPagamentoTestsAutoMockerFixture>
@@ -24,9 +24,9 @@ namespace ERP.Business.Tests.Providers
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Business.Models.FormaPagamento> ObterVariados()
+        public IEnumerable<ERP.Domain.Models.FormaPagamento> ObterVariados()
         {
-            var list = new List<ERP.Business.Models.FormaPagamento>();
+            var list = new List<ERP.Domain.Models.FormaPagamento>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());

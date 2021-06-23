@@ -1,12 +1,15 @@
-﻿using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Business.Models.Validations;
+﻿using ERP.Domain.Services.Intefaces;
+using ERP.Domain.Repositories;
+using ERP.Domain.Models;
+using ERP.Domain.Models.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using ERP.Core.Services;
+using ERP.Core.Notificacoes;
 
-namespace ERP.Business.Services
+namespace ERP.Domain.Services
 {
     public class ClienteService : BaseService, IClienteService
     {

@@ -1,7 +1,7 @@
-﻿using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Business.Services;
-using ERP.Business.Tests.Providers;
+﻿using ERP.Domain.Models;
+using ERP.Domain.Repositories;
+using ERP.Domain.Services;
+using ERP.Domain.Tests.Providers;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ERP.Business.Tests.Services
+namespace ERP.Domain.Tests.Services
 {
     [Collection(nameof(PedidoAutoMockerCollection))]
     public class PedidoServiceTests

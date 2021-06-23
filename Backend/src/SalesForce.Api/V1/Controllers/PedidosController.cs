@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using ERP.Api.Controllers;
 using ERP.Api.ViewModels;
-using ERP.Business.Intefaces;
-using ERP.Business.Models;
+using ERP.Domain.Services.Intefaces;
+using ERP.Domain.Models;
 using FastReport;
 using FastReport.Export.PdfSimple;
 using Microsoft.AspNetCore.Authorization;
@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using ERP.Core.Notificacoes;
 
 namespace ERP.Api.V1.Controllers
 {

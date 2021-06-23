@@ -1,4 +1,4 @@
-﻿namespace ERP.Business.Models
+﻿namespace ERP.Domain.Models
 {
     public enum StatusPedido
     {

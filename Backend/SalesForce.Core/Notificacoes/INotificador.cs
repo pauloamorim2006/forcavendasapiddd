@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using ERP.Business.Notificacoes;
 
-namespace ERP.Business.Intefaces
+namespace ERP.Core.Notificacoes
 {
     public interface INotificador
     {

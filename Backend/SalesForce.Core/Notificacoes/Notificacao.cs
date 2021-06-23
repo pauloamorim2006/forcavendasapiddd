@@ -1,4 +1,4 @@
-﻿namespace ERP.Business.Notificacoes
+﻿namespace ERP.Core.Notificacoes
 {
     public class Notificacao
     {

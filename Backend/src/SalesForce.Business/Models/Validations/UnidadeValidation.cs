@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ERP.Business.Models.Validations
+namespace ERP.Domain.Models.Validations
 {
     public class UnidadeValidation : AbstractValidator<Unidade>
     {

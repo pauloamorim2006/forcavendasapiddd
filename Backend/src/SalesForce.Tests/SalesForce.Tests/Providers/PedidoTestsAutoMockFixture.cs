@@ -1,14 +1,14 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Business.Models;
-using ERP.Business.Services;
+using ERP.Domain.Models;
+using ERP.Domain.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Business.Tests.Providers
+namespace ERP.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(PedidoAutoMockerCollection))]
     public class PedidoAutoMockerCollection : ICollectionFixture<PedidoTestsAutoMockerFixture>
@@ -25,9 +25,9 @@ namespace ERP.Business.Tests.Providers
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Business.Models.Pedido> ObterVariados()
+        public IEnumerable<ERP.Domain.Models.Pedido> ObterVariados()
         {
-            var list = new List<ERP.Business.Models.Pedido>();
+            var list = new List<ERP.Domain.Models.Pedido>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());

@@ -1,8 +1,9 @@
-﻿using ERP.Business.Models.Validations;
+﻿using ERP.Core.DomainObjects;
+using ERP.Domain.Models.Validations;
 using System;
 using System.Collections.Generic;
 
-namespace ERP.Business.Models
+namespace ERP.Domain.Models
 {
     public class Pedido: Entity
     {

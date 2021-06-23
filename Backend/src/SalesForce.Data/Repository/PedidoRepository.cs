@@ -1,14 +1,14 @@
-﻿using System;
+﻿using ERP.Domain.Models;
+using ERP.Domain.Repositories;
+using ERP.Infra.Context;
+using LinqKit;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Data.Context;
-using LinqKit;
-using Microsoft.EntityFrameworkCore;
 
-namespace ERP.Data.Repository
+namespace ERP.Infra.Repository
 {
     public class PedidoRepository : Repository<Pedido>, IPedidoRepository
     {

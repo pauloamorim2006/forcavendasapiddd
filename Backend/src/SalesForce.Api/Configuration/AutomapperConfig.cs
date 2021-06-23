@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using ERP.Api.ViewModels;
-using ERP.Business.Models;
+using ERP.Domain.Models;
 
 namespace ERP.Api.Configuration
 {

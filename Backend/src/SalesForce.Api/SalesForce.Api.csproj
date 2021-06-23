@@ -36,8 +36,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SalesForce.Business\SalesForce.Business.csproj" />
-    <ProjectReference Include="..\SalesForce.Data\SalesForce.Data.csproj" />
+    <ProjectReference Include="..\..\SalesForce.Core\SalesForce.Core.csproj" />
+    <ProjectReference Include="..\SalesForce.Business\SalesForce.Domain.csproj" />
+    <ProjectReference Include="..\SalesForce.Data\SalesForce.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>

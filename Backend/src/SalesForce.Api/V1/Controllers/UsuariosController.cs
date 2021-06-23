@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ERP.Api.Controllers;
-using ERP.Api.Models;
-using ERP.Business.Intefaces;
+﻿using ERP.Api.Controllers;
+using ERP.Core.Notificacoes;
+using ERP.Domain.Services.Intefaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ERP.Api.V1.Controllers
 {

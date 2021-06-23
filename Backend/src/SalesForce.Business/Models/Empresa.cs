@@ -1,9 +1,10 @@
-﻿using ERP.Business.Models.Validations;
+﻿using ERP.Core.DomainObjects;
+using ERP.Domain.Models.Validations;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ERP.Business.Models
+namespace ERP.Domain.Models
 {
     public class Empresa: Entity
     {

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using ERP.Domain.Models;
+using ERP.Domain.Repositories;
+using ERP.Infra.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Data.Context;
-using Microsoft.EntityFrameworkCore;
 
-namespace ERP.Data.Repository
+namespace ERP.Infra.Repository
 {
     public class EmpresaRepository : Repository<Empresa>, IEmpresaRepository
     {

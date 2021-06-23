@@ -1,6 +1,6 @@
 using AutoMapper;
 using ERP.Api.Configuration;
-using ERP.Data.Context;
+using ERP.Infra.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;

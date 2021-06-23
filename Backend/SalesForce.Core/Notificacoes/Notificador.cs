@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ERP.Business.Intefaces;
 
-namespace ERP.Business.Notificacoes
+namespace ERP.Core.Notificacoes
 {
     public class Notificador : INotificador
     {

@@ -1,10 +1,10 @@
-﻿using ERP.Business.Models;
+﻿using ERP.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace ERP.Business.Intefaces
+namespace ERP.Domain.Services.Intefaces
 {
     public interface IFormaPagamentoService
     {

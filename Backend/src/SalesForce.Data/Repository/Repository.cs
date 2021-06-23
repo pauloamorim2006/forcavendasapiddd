@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ERP.Business.Intefaces;
-using ERP.Business.Models;
-using ERP.Data.Context;
+using ERP.Infra.Context;
 using Microsoft.EntityFrameworkCore;
+using ERP.Core.Data;
+using ERP.Core.DomainObjects;
 
-namespace ERP.Data.Repository
+namespace ERP.Infra.Repository
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
     {

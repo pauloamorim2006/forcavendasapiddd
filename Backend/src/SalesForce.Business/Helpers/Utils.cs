@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 
-namespace ERP.Business.Helpers
+namespace ERP.Domain.Helpers
 {
     public static class Utils
     {

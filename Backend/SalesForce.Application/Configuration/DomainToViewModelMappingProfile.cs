@@ -17,13 +17,18 @@ namespace SalesForce.Application.Configuration
             CreateMap<Cliente, ClienteViewModel>();
             CreateMap<Pedido, PedidoViewModel>();
             CreateMap<PedidoItem, PedidoItemViewModel>();
-            CreateMap<PedidoItem, PedidoItemViewModel>();
 
             CreateMap<ProdutoServico, ProdutoServicoViewModel>()
                     .ForMember(dest => dest.UnidadeSigla, opt => opt.MapFrom(src => src.Unidade.Sigla));
             CreateMap<Cliente, ClienteViewModel>()
-                .ForMember(dest => dest.CidadeDescricao, opt => opt.MapFrom(src => src.Cidade.Descricao))
-                .ForMember(dest => dest.CidadeUf, opt => opt.MapFrom(src => src.Cidade.Uf));
+                .ForMember(dest => dest.CidadeDescricao, opt => opt.MapFrom(src => src.Endereco.Cidade.Descricao))
+                .ForMember(dest => dest.CidadeUf, opt => opt.MapFrom(src => src.Endereco.Cidade.Uf))
+                .ForMember(dst => dst.Logradouro, opt => opt.MapFrom(src => src.Endereco.Logradouro))
+                .ForMember(dst => dst.Numero, opt => opt.MapFrom(src => src.Endereco.Numero))
+                .ForMember(dst => dst.CidadeId, opt => opt.MapFrom(src => src.Endereco.Cidade.Id))
+                .ForMember(dst => dst.Complemento, opt => opt.MapFrom(src => src.Endereco.Complemento))
+                .ForMember(dst => dst.Cep, opt => opt.MapFrom(src => src.Endereco.Cep))
+                .ForMember(dst => dst.Bairro, opt => opt.MapFrom(src => src.Endereco.Bairro));
             CreateMap<Pedido, PedidoViewModel>()
                 .ForMember(dest => dest.FormaPagamentoNome, opt => opt.MapFrom(src => src.FormaPagamento.Nome))
                 .ForMember(dest => dest.CondicaoPagamentoDescricao, opt => opt.MapFrom(src => src.CondicaoPagamento.Descricao))

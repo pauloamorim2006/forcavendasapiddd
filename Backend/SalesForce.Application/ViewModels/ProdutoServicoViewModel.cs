@@ -22,7 +22,9 @@ namespace ERP.Application.ViewModels
         [Display(Name = "Permitir Fracionar")]
         public bool PermiteFracionar { get; set; }
         public string Gtin { get; set; }
-        
+        [Display(Name = "Código Interno")]
+        public string CodigoInterno { get; private set; }
+
         [ScaffoldColumn(false)]
         public string UnidadeSigla { get; set; }
     }

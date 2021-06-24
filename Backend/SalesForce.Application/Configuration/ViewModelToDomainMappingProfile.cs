@@ -11,29 +11,20 @@ namespace SalesForce.Application.Configuration
             CreateMap<CidadeViewModel, Cidade>().
                 ConstructUsing(c => new Cidade(c.Id, c.CodigoIbge, c.Descricao, c.Uf));
             CreateMap<UnidadeViewModel, Unidade>().
-                ConstructUsing(u => new Unidade(u.Id, u.Descricao, u.Sigla)) ;
+                ConstructUsing(u => new Unidade(u.Id, u.Descricao, u.Sigla));
             CreateMap<CondicaoPagamentoViewModel, CondicaoPagamento>().
                 ConstructUsing(c => new CondicaoPagamento(c.Id, c.Descricao, string.Empty)) ;
-            CreateMap<ProdutoServico, ProdutoServicoViewModel>().ReverseMap();
-            
-            
-            CreateMap<Empresa, EmpresaViewModel>().ReverseMap();
-            CreateMap<FormaPagamento, FormaPagamentoViewModel>().ReverseMap();
-            CreateMap<Cliente, ClienteViewModel>().ReverseMap();
+            CreateMap<FormaPagamentoViewModel, FormaPagamento>().
+                ConstructUsing(f => new FormaPagamento(f.Id, f.Nome, f.Ativo, f.Tipo, f.Tef, f.Credito, f.PermitirTroco, f.ConfiguracaoFiscal));
+            CreateMap<ProdutoServicoViewModel, ProdutoServico>().
+                ConstructUsing(p => new ProdutoServico(p.Id, p.Nome, p.Estoque, p.Valor, p.UnidadeId, p.Ativo, p.PermiteFracionar, p.CodigoInterno));
+            CreateMap<ClienteViewModel, Cliente>().
+                ConstructUsing(c => new Cliente(c.Id, c.Nome, c.CnpjCpfDi, c.Ativo, c.TipoPessoa, c.Telefone, c.Email, c.InscricaoEstadual, c.TipoInscricaoEstadual, c.ConsumidorFinal,
+                new Domain.Models.Endereco(c.Logradouro, c.Numero, c.Bairro, c.Cep, c.Complemento, c.CidadeId)));
+            CreateMap<Empresa, EmpresaViewModel>().ReverseMap();                        
             CreateMap<Pedido, PedidoViewModel>().ReverseMap();
             CreateMap<PedidoItem, PedidoItemViewModel>().ReverseMap();
-
-            CreateMap<ProdutoServico, ProdutoServicoViewModel>()
-                .ForMember(dest => dest.UnidadeSigla, opt => opt.MapFrom(src => src.Unidade.Sigla));
-            CreateMap<Cliente, ClienteViewModel>()
-                .ForMember(dest => dest.CidadeDescricao, opt => opt.MapFrom(src => src.Cidade.Descricao))
-                .ForMember(dest => dest.CidadeUf, opt => opt.MapFrom(src => src.Cidade.Uf));
-            CreateMap<Pedido, PedidoViewModel>()
-                .ForMember(dest => dest.FormaPagamentoNome, opt => opt.MapFrom(src => src.FormaPagamento.Nome))
-                .ForMember(dest => dest.CondicaoPagamentoDescricao, opt => opt.MapFrom(src => src.CondicaoPagamento.Descricao))
-                .ForMember(dest => dest.ClienteNome, opt => opt.MapFrom(src => src.Cliente.Nome));
-            CreateMap<PedidoItem, PedidoItemViewModel>()
-                .ForMember(dest => dest.ProdutoNome, opt => opt.MapFrom(src => src.Produto.Nome));
+            
         }
     }
 }

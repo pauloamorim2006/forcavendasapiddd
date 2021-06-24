@@ -19,7 +19,7 @@ namespace ERP.Infra.Repository
         public async Task<List<Cliente>> RecuperarTodos()
         {
             return await Db.Clientes
-                .Include(x => x.Cidade)
+                .Include(x => x.Endereco.Cidade)
                 .AsNoTracking()
                 .ToListAsync();
         }

@@ -17,22 +17,22 @@ namespace ERP.Domain.Models.Validations
             RuleFor(f => f.CnpjCpfDi)
                 .NotEmpty().WithMessage("O campo CNPJ/CPF/DI precisa ser fornecido");
 
-            RuleFor(f => f.Endereco)
+            RuleFor(f => f.Endereco.Logradouro)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
                 .Length(2, 60)
                 .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
 
-            RuleFor(f => f.Numero)
+            RuleFor(f => f.Endereco.Numero)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
                 .Length(1, 60)
                 .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
 
-            RuleFor(f => f.Bairro)
+            RuleFor(f => f.Endereco.Bairro)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
                 .Length(2, 60)
                 .WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
 
-            RuleFor(f => f.CidadeId)
+            RuleFor(f => f.Endereco.CidadeId)
                 .NotNull().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
             RuleFor(f => f.TipoPessoa)

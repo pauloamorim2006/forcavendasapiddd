@@ -56,7 +56,7 @@ namespace ERP.Api.V1.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _produtoServicoService.Adicionar(_mapper.Map<ProdutoServico>(produtoServicoViewModel, Tratamento));
+            await _produtoServicoService.Adicionar(_mapper.Map<ProdutoServico>(produtoServicoViewModel));
 
             return CustomResponse(produtoServicoViewModel);
         }
@@ -72,7 +72,7 @@ namespace ERP.Api.V1.Controllers
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _produtoServicoService.Atualizar(_mapper.Map<ProdutoServico>(produtoServicoViewModel, Tratamento));
+            await _produtoServicoService.Atualizar(_mapper.Map<ProdutoServico>(produtoServicoViewModel));
 
             return CustomResponse(produtoServicoViewModel);
         }
@@ -94,15 +94,6 @@ namespace ERP.Api.V1.Controllers
             return _mapper.Map<ProdutoServicoViewModel>(await _produtoServicoService.Obter(id));
         }
 
-        private Action<IMappingOperationOptions> Tratamento =>
-            opt =>
-            {
-                opt.AfterMap(
-                    (src, produtoServico) =>
-                    {
-                        ((ProdutoServico)produtoServico).Unidade = null;
-                    }
-                );
-            };        
+       
     }
 }

@@ -1,11 +1,9 @@
-﻿using AutoMapper;
-using ERP.Api.Extensions;
+﻿using ERP.Api.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SalesForce.Application.Configuration;
 
 namespace ERP.Api.Configuration
 {
@@ -51,9 +49,7 @@ namespace ERP.Api.Configuration
                             .SetIsOriginAllowedToAllowWildcardSubdomains()
                             //.WithHeaders(HeaderNames.ContentType, "x-custom-header")
                             .AllowAnyHeader());
-            });
-
-            services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(ViewModelToDomainMappingProfile));
+            });            
 
             return services;
         }

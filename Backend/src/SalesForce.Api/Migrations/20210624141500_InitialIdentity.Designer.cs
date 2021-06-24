@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ERP.Api.Migrations
+namespace SalesForce.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210227222103_Initial")]
-    partial class Initial
+    [Migration("20210624141500_InitialIdentity")]
+    partial class InitialIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

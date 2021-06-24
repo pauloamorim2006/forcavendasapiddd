@@ -40,15 +40,16 @@ namespace ERP.Domain.Tests.Providers
 
             var list = new Faker<Models.ProdutoServico>("pt_BR")
                 .CustomInstantiator(f => new Models.ProdutoServico
-                {
-                    Nome = f.Name.FullName(genero),
-                    Estoque = f.Random.Double(0, 99999),
-                    Valor = f.Random.Double(0, 99999),
-                    UnidadeId = Guid.NewGuid(),
-                    Ativo = true,
-                    PermiteFracionar = true,                    
-                    CodigoInterno = f.Random.Int(0, 999999).ToString()                    
-                });
+                (
+                    Guid.NewGuid(),
+                    f.Name.FullName(genero),
+                    f.Random.Double(0, 99999),
+                    f.Random.Double(0, 99999),
+                    Guid.NewGuid(),
+                    true,
+                    true,                    
+                    f.Random.Int(0, 999999).ToString()                    
+                ));
 
             return list.Generate(quantidade);
         }
@@ -58,7 +59,17 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var objeto = new Faker<Models.ProdutoServico>("pt_BR")
-                .CustomInstantiator(f => new Models.ProdutoServico {});
+                .CustomInstantiator(f => new Models.ProdutoServico
+                (
+                    Guid.Empty,
+                    string.Empty,
+                    0,
+                    0,
+                    Guid.Empty,
+                    false,
+                    false,
+                    string.Empty
+                ));
 
             return objeto;
         }

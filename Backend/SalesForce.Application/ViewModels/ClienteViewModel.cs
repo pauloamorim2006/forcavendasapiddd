@@ -5,13 +5,13 @@ namespace ERP.Application.ViewModels
 {
     public class ClienteViewModel
     {
-        public Guid? Id { get; set; }
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "Nome é de preenchimento obrigatório")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "CNPJ/CPF/DI é de preenchimento obrigatório")]
         public string CnpjCpfDi { get; set; }
         [Required(ErrorMessage = "Endereço é de preenchimento obrigatório")]
-        public string Endereco { get; set; }
+        public string Logradouro { get; set; }
         [Required(ErrorMessage = "Número é de preenchimento obrigatório")]
         public string Numero { get; set; }
         [Required(ErrorMessage = "Bairro é de preenchimento obrigatório")]

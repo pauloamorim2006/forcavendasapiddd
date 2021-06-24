@@ -56,7 +56,7 @@ namespace ERP.Api.V1.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _clienteService.Adicionar(_mapper.Map<Cliente>(ClienteViewModel, Tratamento));
+            await _clienteService.Adicionar(_mapper.Map<Cliente>(ClienteViewModel));
 
             return CustomResponse(ClienteViewModel);
         }
@@ -72,7 +72,7 @@ namespace ERP.Api.V1.Controllers
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _clienteService.Atualizar(_mapper.Map<Cliente>(ClienteViewModel, Tratamento));
+            await _clienteService.Atualizar(_mapper.Map<Cliente>(ClienteViewModel));
 
             return CustomResponse(ClienteViewModel);
         }
@@ -93,16 +93,5 @@ namespace ERP.Api.V1.Controllers
         {
             return _mapper.Map<ClienteViewModel>(await _clienteService.Obter(id));
         }
-
-        private Action<IMappingOperationOptions> Tratamento =>
-            opt =>
-            {
-                opt.AfterMap(
-                    (src, cliente) =>
-                    {
-                        ((Cliente)cliente).Cidade = null;
-                    }
-                );
-            };
     }
 }

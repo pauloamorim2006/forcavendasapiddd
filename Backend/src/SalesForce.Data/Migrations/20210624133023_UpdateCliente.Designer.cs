@@ -4,14 +4,16 @@ using ERP.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace SalesForce.Data.Migrations
 {
     [DbContext(typeof(SalesForceDbContext))]
-    partial class SalesForceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210624133023_UpdateCliente")]
+    partial class UpdateCliente
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -354,15 +356,12 @@ namespace SalesForce.Data.Migrations
 
                             b1.Property<string>("Bairro")
                                 .IsRequired()
-                                .HasColumnName("Bairro")
-                                .HasColumnType("varchar(60)")
-                                .HasMaxLength(60);
-
-                            b1.Property<string>("Cep")
-                                .IsRequired()
                                 .HasColumnName("Cep")
                                 .HasColumnType("varchar(20)")
                                 .HasMaxLength(60);
+
+                            b1.Property<string>("Cep")
+                                .HasColumnType("varchar(100)");
 
                             b1.Property<Guid>("CidadeId")
                                 .HasColumnType("uniqueidentifier");

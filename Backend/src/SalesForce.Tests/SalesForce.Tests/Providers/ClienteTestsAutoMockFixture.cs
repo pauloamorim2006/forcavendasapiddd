@@ -2,8 +2,10 @@
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
 using ERP.Application.Services;
+using ERP.Domain.Models;
 using ERP.Domain.Services;
 using Moq.AutoMock;
+using SalesForce.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,23 +43,27 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var clientes = new Faker<ERP.Domain.Models.Cliente>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.Cliente
-                {
-                    Nome = f.Name.FullName(genero),
-                    CnpjCpfDi = f.Company.Cnpj(),
-                    Endereco = f.Address.StreetName(),
-                    Numero = f.Random.Number(90000).ToString(),
-                    Bairro = f.Name.FullName(genero),
-                    Cep = f.Address.ZipCode(),
-                    CidadeId = Guid.NewGuid(),
-                    Ativo = true,
-                    TipoPessoa = "F",
-                    Telefone = f.Phone.PhoneNumber(),
-                    Complemento = f.Address.SecondaryAddress(),
-                    Email = f.Internet.Email(),
-                    InscricaoEstadual = f.Company.Cnpj(),
-                    TipoInscricaoEstadual = 9
-                })
+                .CustomInstantiator(f => new Cliente
+                (
+                    Guid.NewGuid(),
+                    f.Name.FullName(genero),
+                    f.Company.Cnpj(),                    
+                    true,
+                    "F",
+                    f.Phone.PhoneNumber(),
+                    f.Internet.Email(),
+                    f.Company.Cnpj(),
+                    9,
+                    false,
+                    new Endereco(
+                        f.Address.StreetName(),
+                        f.Random.Number(90000).ToString(),
+                        f.Name.FullName(genero),
+                        f.Address.ZipCode(),                    
+                        f.Address.SecondaryAddress(),
+                        Guid.NewGuid()
+                    )
+                ))
                 .RuleFor(c => c.Email, (f, c) =>
                       f.Internet.Email(c.Nome.ToLower()));
 
@@ -69,23 +75,27 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var cliente = new Faker<ERP.Domain.Models.Cliente>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.Cliente
-                {
-                    Nome = string.Empty,
-                    CnpjCpfDi = string.Empty,
-                    Endereco = string.Empty,
-                    Numero = string.Empty,
-                    Bairro = string.Empty,
-                    Cep = string.Empty,
-                    CidadeId = Guid.NewGuid(),
-                    Ativo = true,
-                    TipoPessoa = "F",
-                    Telefone = string.Empty,
-                    Complemento = string.Empty,
-                    Email = string.Empty,
-                    InscricaoEstadual = string.Empty,
-                    TipoInscricaoEstadual = 9
-                });
+                .CustomInstantiator(f => new Cliente
+                (
+                    Guid.Empty,
+                    string.Empty,
+                    string.Empty,
+                    false,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    string.Empty,
+                    0,
+                    false,
+                    new Endereco(
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        Guid.Empty
+                    )
+                ));
 
             return cliente;
         }

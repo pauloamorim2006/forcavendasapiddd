@@ -152,7 +152,7 @@ namespace ERP.Domain.Tests.Services
         {
             // Arrange
             var registro = _pedidoTestsAutoMockerFixture.GerarRegistroInvalido();
-            registro.Status = StatusPedido.Faturado;
+            registro.SetStatus(StatusPedido.Faturado);
             var id = Guid.NewGuid();
             _pedidoTestsAutoMockerFixture.Mocker.GetMock<IPedidoRepository>().Setup(c => c.RecuperarPorId(id))
                 .ReturnsAsync(registro);
@@ -289,7 +289,7 @@ namespace ERP.Domain.Tests.Services
         {
             // Arrange
             var registro = _pedidoTestsAutoMockerFixture.GerarRegistroInvalido();
-            registro.Status = StatusPedido.Faturado;
+            registro.SetStatus(StatusPedido.Faturado);
             var id = Guid.NewGuid();
             _pedidoTestsAutoMockerFixture.Mocker.GetMock<IPedidoRepository>().Setup(c => c.Obter(id))
                 .ReturnsAsync(registro);

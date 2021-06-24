@@ -67,7 +67,7 @@ namespace ERP.Api.V1.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _pedidoService.Adicionar(_mapper.Map<Pedido>(PedidoViewModel, Tratamento));
+            await _pedidoService.Adicionar(_mapper.Map<Pedido>(PedidoViewModel));
 
             return CustomResponse(PedidoViewModel);
         }
@@ -83,7 +83,7 @@ namespace ERP.Api.V1.Controllers
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _pedidoService.Atualizar(_mapper.Map<Pedido>(PedidoViewModel, Tratamento));
+            await _pedidoService.Atualizar(_mapper.Map<Pedido>(PedidoViewModel));
 
             return CustomResponse(PedidoViewModel);
         }
@@ -181,21 +181,6 @@ namespace ERP.Api.V1.Controllers
         {
             return _mapper.Map<PedidoViewModel>(await _pedidoService.Obter(id));
         }
-        private Action<IMappingOperationOptions> Tratamento =>
-            opt =>
-            {
-                opt.AfterMap(
-                    (src, pedido) =>
-                    {
-                        ((Pedido)pedido).CondicaoPagamento = null;
-                        ((Pedido)pedido).FormaPagamento = null;
-                        ((Pedido)pedido).Cliente = null;
-                        foreach (PedidoItem item in ((Pedido)pedido).PedidoItens)
-                        {
-                            item.Produto = null;
-                        }
-                    }
-                );
-            };        
+        
     }
 }

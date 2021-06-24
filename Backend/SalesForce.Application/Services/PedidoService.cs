@@ -92,8 +92,8 @@ namespace ERP.Application.Services
             if (!Validar(registro)) return false;
 
             if (!ExecutarValidacao(new PedidoValidation(), pedido)) return false;
-            
-            pedido.Codigo = registro.Codigo;
+                        
+            pedido.SetCodigo(registro.Codigo);
 
             await _pedidoRepository.Atualizar(pedido);
             return true;
@@ -117,7 +117,7 @@ namespace ERP.Application.Services
 
             try
             {
-                registro.Status = StatusPedido.Cancelado;
+                registro.SetStatus(StatusPedido.Cancelado);
                 await _pedidoRepository.Atualizar(registro);
                 return true;
             }

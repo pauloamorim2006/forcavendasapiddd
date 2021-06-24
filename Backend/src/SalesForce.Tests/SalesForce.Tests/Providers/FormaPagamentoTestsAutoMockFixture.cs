@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using ERP.Application.Services;
+using ERP.Domain.Models;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
@@ -34,21 +35,22 @@ namespace ERP.Domain.Tests.Providers
             return list;
         }
 
-        public IEnumerable<Models.FormaPagamento> GerarList(int quantidade, bool ativo)
+        public IEnumerable<FormaPagamento> GerarList(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<Models.FormaPagamento>("pt_BR")
-                .CustomInstantiator(f => new Models.FormaPagamento
-                {
-                    Nome = f.Name.FullName(genero),
-                    Ativo = true,
-                    Tipo = "D",
-                    Tef = true,
-                    Credito = true,
-                    PermitirTroco = true,
-                    ConfiguracaoFiscal = "01"
-                 });
+            var list = new Faker<FormaPagamento>("pt_BR")
+                .CustomInstantiator(f => new FormaPagamento
+                (
+                    Guid.NewGuid(),
+                    f.Name.FullName(genero),
+                    true,
+                    "D",
+                    true,
+                    true,
+                    true,
+                    "01"
+                ));
 
             return list.Generate(quantidade);
         }
@@ -58,9 +60,16 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var objeto = new Faker<Models.FormaPagamento>("pt_BR")
-                .CustomInstantiator(f => new Models.FormaPagamento
-                {
-                });
+                .CustomInstantiator(f => new Models.FormaPagamento(
+                    Guid.Empty,
+                    string.Empty,
+                    false,
+                    string.Empty,
+                    false,
+                    false,
+                    false,
+                    string.Empty
+                ));
 
             return objeto;
         }

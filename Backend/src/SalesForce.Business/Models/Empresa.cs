@@ -7,6 +7,10 @@ namespace ERP.Domain.Models
 {
     public class Empresa: Entity, IAggregateRoot
     {
+        protected Empresa()
+        {
+        }
+
         public Empresa(Guid id, string nome, string fantasia, string cnpjCpfDi, string tipoPessoa, string telefone, string email, string inscricaoEstadual, int tipoInscricaoEstadual, int crt, Endereco endereco)
         {
             Id = id != Guid.Empty ? id : Guid.NewGuid();
@@ -35,7 +39,7 @@ namespace ERP.Domain.Models
         public int TipoInscricaoEstadual { get; private set; }
         public bool Padrao { get; private set; }
         public int Crt { get; private set; }
-        public Endereco Endereco { get; set; }
+        public Endereco Endereco { get; private set; }
 
         public override bool EhValido()
         {

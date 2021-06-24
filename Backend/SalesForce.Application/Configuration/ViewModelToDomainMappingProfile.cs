@@ -21,7 +21,9 @@ namespace SalesForce.Application.Configuration
             CreateMap<ClienteViewModel, Cliente>().
                 ConstructUsing(c => new Cliente(c.Id, c.Nome, c.CnpjCpfDi, c.Ativo, c.TipoPessoa, c.Telefone, c.Email, c.InscricaoEstadual, c.TipoInscricaoEstadual, c.ConsumidorFinal,
                 new Domain.Models.Endereco(c.Logradouro, c.Numero, c.Bairro, c.Cep, c.Complemento, c.CidadeId)));
-            CreateMap<Empresa, EmpresaViewModel>().ReverseMap();                        
+            CreateMap<EmpresaViewModel, Empresa>().
+                ConstructUsing(c => new Empresa(c.Id, c.Nome, c.Fantasia, c.CnpjCpfDi, c.TipoPessoa, c.Telefone, c.Email, c.InscricaoEstadual, c.TipoInscricaoEstadual, c.Crt,
+                new Domain.Models.Endereco(c.Logradouro, c.Numero, c.Bairro, c.Cep, c.Complemento, c.CidadeId)));                    
             CreateMap<Pedido, PedidoViewModel>().ReverseMap();
             CreateMap<PedidoItem, PedidoItemViewModel>().ReverseMap();
             

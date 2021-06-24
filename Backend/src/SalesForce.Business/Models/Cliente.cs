@@ -5,7 +5,7 @@ using System;
 
 namespace ERP.Domain.Models
 {
-    public class Cliente: Entity
+    public class Cliente: Entity, IAggregateRoot
     {
         protected Cliente()
         {

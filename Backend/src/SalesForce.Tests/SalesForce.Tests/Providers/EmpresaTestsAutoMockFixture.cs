@@ -2,7 +2,9 @@
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
 using ERP.Application.Services;
+using ERP.Domain.Models;
 using Moq.AutoMock;
+using SalesForce.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,27 +41,28 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<ERP.Domain.Models.Empresa>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.Empresa
-                {
-                    Nome = f.Name.FullName(genero),
-                    Fantasia = f.Name.FullName(genero),
-                    CnpjCpfDi = f.Company.Cnpj(),
-                    Endereco = f.Address.StreetName(),
-                    Numero = f.Random.Number(90000).ToString(),
-                    Bairro = f.Name.FullName(genero),
-                    Cep = f.Address.ZipCode(),
-                    CidadeId = Guid.NewGuid(),
-                    Ativo = true,
-                    TipoPessoa = "F",
-                    Telefone = f.Phone.PhoneNumber(),
-                    Complemento = f.Address.SecondaryAddress(),
-                    Email = f.Internet.Email(),
-                    InscricaoEstadual = f.Company.Cnpj(),
-                    TipoInscricaoEstadual = 9,
-                    Padrao = true,
-                    Crt = 1
-                });
+            var list = new Faker<Empresa>("pt_BR")
+                .CustomInstantiator(f => new Empresa
+                (
+                    Guid.NewGuid(),
+                    f.Name.FullName(genero),
+                    f.Name.FullName(genero),
+                    f.Company.Cnpj(),
+                    "F",
+                    f.Phone.PhoneNumber(),
+                    f.Internet.Email(),
+                    f.Company.Cnpj(),
+                    9,
+                    1,
+                    new Endereco(
+                        f.Address.StreetName(),
+                        f.Random.Number(90000).ToString(),
+                        f.Name.FullName(genero),
+                        f.Address.ZipCode(),
+                        f.Address.SecondaryAddress(),
+                        Guid.NewGuid()
+                    )
+                )) ;
 
             return list.Generate(quantidade);
         }
@@ -68,8 +71,28 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var objeto = new Faker<ERP.Domain.Models.Empresa>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.Empresa());
+            var objeto = new Faker<Empresa>("pt_BR")
+                .CustomInstantiator(f => new Empresa
+                    (
+                        Guid.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        string.Empty,
+                        0,
+                        1,
+                        new Endereco(
+                            string.Empty,
+                            string.Empty,
+                            string.Empty,
+                            string.Empty,
+                            string.Empty,
+                            Guid.Empty                 
+                    )
+            ));
 
             return objeto;
         }

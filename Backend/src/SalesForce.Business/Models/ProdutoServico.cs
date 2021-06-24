@@ -4,7 +4,7 @@ using System;
 
 namespace ERP.Domain.Models
 {
-    public class ProdutoServico : Entity
+    public class ProdutoServico : Entity, IAggregateRoot
     {
         protected ProdutoServico()
         {

@@ -14,7 +14,7 @@ namespace ERP.Infra.Repository
 
         public async Task<Empresa> Buscar()
         {
-            return await Db.Empresas.AsNoTracking().Include(x => x.Cidade).FirstOrDefaultAsync();
+            return await Db.Empresas.AsNoTracking().Include(x => x.Endereco.Cidade).FirstOrDefaultAsync();
         }
         public bool JaExiste(Guid id, string cnpjCpfDi)
         {

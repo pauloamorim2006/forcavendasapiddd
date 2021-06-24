@@ -59,7 +59,7 @@ namespace ERP.Domain.Tests.Services
             // Assert
             Assert.False(retorno);
             Assert.False(registro.EhValido());
-            Assert.True(registro.ValidationResult.Errors.Count == 9);
+            Assert.True(registro.ValidationResult.Errors.Count == 13);
             _empresaTestsAutoMockerFixture.Mocker.GetMock<IEmpresaRepository>().Verify(r => r.Adicionar(registro), Times.Never); Assert.False(registro.EhValido());
             _empresaTestsAutoMockerFixture.Mocker.GetMock<IEmpresaRepository>().Verify(r => r.JaExiste(registro.Id, registro.CnpjCpfDi), Times.Never);                        
         }
@@ -121,7 +121,7 @@ namespace ERP.Domain.Tests.Services
             // Assert
             Assert.False(retorno);
             Assert.False(registro.EhValido());
-            Assert.True(registro.ValidationResult.Errors.Count == 9);
+            Assert.True(registro.ValidationResult.Errors.Count == 13);
             _empresaTestsAutoMockerFixture.Mocker.GetMock<IEmpresaRepository>().Verify(r => r.Atualizar(registro), Times.Never);
             _empresaTestsAutoMockerFixture.Mocker.GetMock<IEmpresaRepository>().Verify(r => r.JaExiste(registro.Id, registro.CnpjCpfDi), Times.Never);
         }

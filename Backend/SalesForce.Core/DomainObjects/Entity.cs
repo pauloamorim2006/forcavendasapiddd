@@ -8,7 +8,7 @@ namespace ERP.Core.DomainObjects
         protected Entity()
         {
         }
-        public Guid Id { get; set; }
+        public Guid Id { get; protected set; }
         public ValidationResult ValidationResult { get; set; }
         public virtual bool EhValido()
         {

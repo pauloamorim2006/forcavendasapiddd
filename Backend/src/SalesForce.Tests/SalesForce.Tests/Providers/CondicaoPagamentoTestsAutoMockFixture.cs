@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using ERP.Application.Services;
+using ERP.Domain.Models;
 using ERP.Domain.Repositories;
 using ERP.Infra.Repository;
 using Moq.AutoMock;
@@ -22,14 +23,14 @@ namespace ERP.Domain.Tests.Providers
         public CondicaoPagamentoRepository CondicaoPagamentoRepository;
         public AutoMocker Mocker;
 
-        public ERP.Domain.Models.CondicaoPagamento GerarRegistroValido()
+        public CondicaoPagamento GerarRegistroValido()
         {
             return GerarList(1, true).FirstOrDefault();
         }
 
         public IEnumerable<ERP.Domain.Models.CondicaoPagamento> ObterVariados()
         {
-            var list = new List<ERP.Domain.Models.CondicaoPagamento>();
+            var list = new List<CondicaoPagamento>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());
@@ -41,12 +42,13 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<ERP.Domain.Models.CondicaoPagamento>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.CondicaoPagamento
-                {
-                    Nome = f.Name.FullName(genero),
-                    Descricao = f.Name.FullName(genero)
-                });
+            var list = new Faker<CondicaoPagamento>("pt_BR")
+                .CustomInstantiator(f => new CondicaoPagamento
+                (
+                    Guid.NewGuid(),
+                    f.Name.FullName(genero),
+                    f.Name.FullName(genero)
+                )); ;
 
             return list.Generate(quantidade);
         }
@@ -55,12 +57,13 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var objeto = new Faker<ERP.Domain.Models.CondicaoPagamento>("pt_BR")
-                .CustomInstantiator(f => new ERP.Domain.Models.CondicaoPagamento
-                {
-                    Nome = string.Empty,
-                    Descricao = string.Empty
-                });
+            var objeto = new Faker<CondicaoPagamento>("pt_BR")
+                .CustomInstantiator(f => new CondicaoPagamento
+                (
+                    Guid.NewGuid(),
+                    string.Empty,
+                    string.Empty
+                ));
 
             return objeto;
         }

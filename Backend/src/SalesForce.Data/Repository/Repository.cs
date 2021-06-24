@@ -10,7 +10,7 @@ using ERP.Core.DomainObjects;
 
 namespace ERP.Infra.Repository
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
         protected readonly SalesForceDbContext Db;
         protected readonly DbSet<TEntity> DbSet;
@@ -55,7 +55,8 @@ namespace ERP.Infra.Repository
 
         public virtual async Task Remover(Guid id)
         {
-            DbSet.Remove(new TEntity { Id = id });
+            var entity = await DbSet.FindAsync(id);
+            DbSet.Remove(entity);
             await SaveChanges();
         }
 

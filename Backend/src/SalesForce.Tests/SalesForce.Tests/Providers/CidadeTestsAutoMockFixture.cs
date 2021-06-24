@@ -43,11 +43,12 @@ namespace ERP.Domain.Tests.Providers
 
             var list = new Faker<ERP.Domain.Models.Cidade>("pt_BR")
                 .CustomInstantiator(f => new Cidade
-                {
-                    CodigoIbge = f.Random.Number(),
-                    Descricao = f.Address.City(),
-                    Uf = "MG"
-                });
+                (
+                    Guid.Empty,
+                    f.Random.Number(),
+                    f.Address.City(),
+                    "MG"
+                ));
 
             return list.Generate(quantidade);
         }
@@ -58,11 +59,12 @@ namespace ERP.Domain.Tests.Providers
 
             var objeto = new Faker<ERP.Domain.Models.Cidade>("pt_BR")
                 .CustomInstantiator(f => new ERP.Domain.Models.Cidade
-                {
-                    CodigoIbge = f.Random.Number(),
-                    Descricao = string.Empty,
-                    Uf = string.Empty
-                });
+                (
+                    Guid.Empty,
+                    f.Random.Number(),
+                    string.Empty,
+                    string.Empty
+                ));
 
             return objeto;
         }

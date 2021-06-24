@@ -40,14 +40,16 @@ namespace ERP.Api.V1.Controllers
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var empresaExistente = await _empresaService.Buscar();
-            var empresa = _mapper.Map<Empresa>(EmpresaViewModel);
+            Empresa empresa = null;
             if (empresaExistente != null)
             {
-                empresa.Id = empresaExistente.Id;
+                EmpresaViewModel.Id = empresaExistente.Id;
+                empresa = _mapper.Map<Empresa>(EmpresaViewModel);
                 await _empresaService.Atualizar(empresa);
             }
             else
             {
+                empresa = _mapper.Map<Empresa>(EmpresaViewModel);
                 await _empresaService.Adicionar(empresa);
             }
 

@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using ERP.Application.Services;
+using ERP.Domain.Models;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
@@ -38,12 +39,13 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var registros = new Faker<Models.Unidade>("pt_BR")
-                .CustomInstantiator(f => new Models.Unidade
-                {
-                    Descricao = f.Name.FullName(genero),
-                    Sigla = f.Name.FullName(genero).Substring(0, 2)
-                });
+            var registros = new Faker<Unidade>("pt_BR")
+                .CustomInstantiator(f => new Unidade
+                (
+                    Guid.NewGuid(),
+                    f.Name.FullName(genero),
+                    f.Name.FullName(genero).Substring(0, 2)
+                )) ;
 
             return registros.Generate(quantidade);
         }
@@ -52,8 +54,12 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var registro = new Faker<Models.Unidade>("pt_BR")
-                .CustomInstantiator(f => new Models.Unidade { });
+            var registro = new Faker<Unidade>("pt_BR")
+                .CustomInstantiator(f => new Unidade(
+                    Guid.Empty,
+                    string.Empty,
+                    string.Empty
+                ));
 
             return registro;
         }

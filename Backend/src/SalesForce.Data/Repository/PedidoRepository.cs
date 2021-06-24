@@ -121,7 +121,7 @@ namespace ERP.Infra.Repository
 
                 if (pedidoItemExistente == null)
                 {
-                    pedidoExistente.PedidoItens.Add(item);
+                    pedidoExistente.AddItem(item);
                 }
                 else
                 {

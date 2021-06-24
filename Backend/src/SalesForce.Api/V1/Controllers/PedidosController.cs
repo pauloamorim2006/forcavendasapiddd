@@ -67,7 +67,9 @@ namespace ERP.Api.V1.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _pedidoService.Adicionar(_mapper.Map<Pedido>(PedidoViewModel));
+            var registro = _mapper.Map<Pedido>(PedidoViewModel);
+            registro.AddItens(_mapper.Map<List<PedidoItem>>(PedidoViewModel.PedidoItens));
+            await _pedidoService.Adicionar(registro);
 
             return CustomResponse(PedidoViewModel);
         }
@@ -83,7 +85,9 @@ namespace ERP.Api.V1.Controllers
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _pedidoService.Atualizar(_mapper.Map<Pedido>(PedidoViewModel));
+            var registro = _mapper.Map<Pedido>(PedidoViewModel);
+            registro.AddItens(_mapper.Map<List<PedidoItem>>(PedidoViewModel.PedidoItens));
+            await _pedidoService.Atualizar(registro);
 
             return CustomResponse(PedidoViewModel);
         }

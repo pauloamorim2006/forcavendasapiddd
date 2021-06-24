@@ -20,7 +20,7 @@ namespace ERP.Domain.Models
             Data = data;
             CondicaoPagamentoId = condicaoPagamentoId;
             FormaPagamentoId = formaPagamentoId;
-            PedidoItens = new List<PedidoItem>();
+            _pedidoItens = new List<PedidoItem>();
         }
 
         public int Codigo { get; private set; }
@@ -32,7 +32,9 @@ namespace ERP.Domain.Models
         public CondicaoPagamento CondicaoPagamento { get; private set; }        
         public Guid FormaPagamentoId { get; private set; }
         public FormaPagamento FormaPagamento { get; private set; }
-        public List<PedidoItem> PedidoItens { get; private set; }
+
+        private readonly List<PedidoItem> _pedidoItens;
+        public IReadOnlyCollection<PedidoItem> PedidoItens => _pedidoItens;
 
         public void SetCodigo(int valor)
         {
@@ -48,15 +50,37 @@ namespace ERP.Domain.Models
             Status = valor;
         }
 
-        public void SetItem(PedidoItem item)
+        public void AddItem(PedidoItem item)
         {
-            PedidoItens.Add(item);
+            _pedidoItens.Add(item);
+        }
+
+        public void AddItens(List<PedidoItem> items)
+        {
+            foreach (var item in items)
+            {
+                _pedidoItens.Add(item);
+            }
         }
 
         public override bool EhValido()
         {
             ValidationResult = new PedidoValidation().Validate(this);
             return ValidationResult.IsValid;
+        }
+
+        public static class PedidoFactory
+        {
+            public static Pedido NovoPedido(Guid id, int codigo, StatusPedido status, Guid clienteId, DateTime data, Guid condicaoPagamentoId, Guid formaPagamentoId, IList<PedidoItem> pedidoItens)
+            {
+                var pedido = new Pedido(id, codigo, status, clienteId, data, condicaoPagamentoId, formaPagamentoId);
+
+                foreach (var item in pedidoItens)
+                {
+                    pedido.AddItem(item);
+                }
+                return pedido;
+            }
         }
     }
 }

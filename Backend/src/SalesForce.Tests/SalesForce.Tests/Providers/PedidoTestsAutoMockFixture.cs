@@ -40,7 +40,7 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var list = new Faker<Models.Pedido>("pt_BR")
-                .CustomInstantiator(f => new Models.Pedido
+                .CustomInstantiator(f => new Pedido.PedidoFactory.NovoPedido
                 (
                     Guid.NewGuid(),
                     f.Random.Number(),

@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SalesForce.Application\SalesForce.Application.csproj" />
-    <ProjectReference Include="..\..\SalesForce.Business\SalesForce.Domain.csproj" />
-    <ProjectReference Include="..\..\SalesForce.Data\SalesForce.Infra.csproj" />
+    <ProjectReference Include="..\..\src\SalesForce.Application\SalesForce.Application.csproj" />
+    <ProjectReference Include="..\..\src\SalesForce.Business\SalesForce.Domain.csproj" />
+    <ProjectReference Include="..\..\src\SalesForce.Data\SalesForce.Infra.csproj" />
   </ItemGroup>
 
 </Project>

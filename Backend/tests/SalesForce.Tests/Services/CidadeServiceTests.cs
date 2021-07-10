@@ -15,7 +15,7 @@ namespace SalesForce.Domain.Tests.Services
     {
         readonly CidadeTestsAutoMockerFixture _cidadeTestsAutoMockerFixture;
 
-        private readonly CidadeService _cidadeService;
+        private readonly CidadeService  _cidadeService;
 
         public CidadeServiceTests(CidadeTestsAutoMockerFixture cidadeTestsFixture)
         {

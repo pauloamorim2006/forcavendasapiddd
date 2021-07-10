@@ -1,6 +1,6 @@
-﻿using ERP.Application.Services;
-using ERP.Domain.Repositories;
-using ERP.Domain.Tests.Providers;
+﻿using SalesForce.Application.Services;
+using SalesForce.Domain.Repositories;
+using SalesForce.Domain.Tests.Providers;
 using Moq;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ERP.Domain.Tests.Services
+namespace SalesForce.Domain.Tests.Services
 {
     [Collection(nameof(CidadeAutoMockerCollection))]
     public class CidadeServiceTests
@@ -241,7 +241,7 @@ namespace ERP.Domain.Tests.Services
         public async void CidadeService_Buscar_DeveExecutarComSucesso()
         {
             // Arrange
-            Expression<Func<ERP.Domain.Models.Cidade, bool>> predicate = (x) => x.Descricao != string.Empty;
+            Expression<Func<SalesForce.Domain.Models.Cidade, bool>> predicate = (x) => x.Descricao != string.Empty;
             _cidadeTestsAutoMockerFixture.Mocker.GetMock<ICidadeRepository>().Setup(c => c.Buscar(predicate))
                 .Returns(Task.FromResult(_cidadeTestsAutoMockerFixture.ObterVariados()));
 

@@ -1,8 +1,8 @@
-﻿using ERP.Api.Models;
+﻿using SalesForce.Api.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ERP.Api.Data
+namespace SalesForce.Api.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

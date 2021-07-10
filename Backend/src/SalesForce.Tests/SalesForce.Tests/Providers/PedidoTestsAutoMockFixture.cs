@@ -1,14 +1,14 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Application.Services;
-using ERP.Domain.Models;
+using SalesForce.Application.Services;
+using SalesForce.Domain.Models;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Domain.Tests.Providers
+namespace SalesForce.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(PedidoAutoMockerCollection))]
     public class PedidoAutoMockerCollection : ICollectionFixture<PedidoTestsAutoMockerFixture>
@@ -25,9 +25,9 @@ namespace ERP.Domain.Tests.Providers
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Domain.Models.Pedido> ObterVariados()
+        public IEnumerable<Pedido> ObterVariados()
         {
-            var list = new List<ERP.Domain.Models.Pedido>();
+            var list = new List<Pedido>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());
@@ -39,8 +39,8 @@ namespace ERP.Domain.Tests.Providers
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var list = new Faker<Models.Pedido>("pt_BR")
-                .CustomInstantiator(f => new Pedido.PedidoFactory.NovoPedido
+            var list = new Faker<Pedido>("pt_BR")
+                .CustomInstantiator(f => Pedido.PedidoFactory.Novo
                 (
                     Guid.NewGuid(),
                     f.Random.Number(),
@@ -74,7 +74,7 @@ namespace ERP.Domain.Tests.Providers
             var genero = new Faker().PickRandom<Name.Gender>();
 
             var objeto = new Faker<Models.Pedido>("pt_BR")
-                .CustomInstantiator(f => new Models.Pedido
+                .CustomInstantiator(f => new Pedido
                 (
                     Guid.Empty,
                     0,
@@ -82,8 +82,7 @@ namespace ERP.Domain.Tests.Providers
                     Guid.Empty,
                     DateTime.Now,
                     Guid.Empty,
-                    Guid.Empty,
-                    null
+                    Guid.Empty
                 ));
 
             return objeto;

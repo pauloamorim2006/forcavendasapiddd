@@ -1,6 +1,6 @@
-﻿using ERP.Domain.Models;
-using ERP.Domain.Repositories;
-using ERP.Infra.Context;
+﻿using SalesForce.Domain.Models;
+using SalesForce.Domain.Repositories;
+using SalesForce.Infra.Context;
 using LinqKit;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ERP.Infra.Repository
+namespace SalesForce.Infra.Repository
 {
     public class PedidoRepository : Repository<Pedido>, IPedidoRepository
     {

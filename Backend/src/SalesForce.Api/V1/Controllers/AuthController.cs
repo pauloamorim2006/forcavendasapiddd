@@ -1,8 +1,8 @@
-﻿using ERP.Api.Controllers;
-using ERP.Api.Extensions;
-using ERP.Application.ViewModels;
-using ERP.Core.Notificacoes;
-using ERP.Domain.Services;
+﻿using SalesForce.Api.Controllers;
+using SalesForce.Api.Extensions;
+using SalesForce.Application.ViewModels;
+using SalesForce.Core.Notificacoes;
+using SalesForce.Domain.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,7 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP.Api.V1.Controllers
+namespace SalesForce.Api.V1.Controllers
 {
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}")]

@@ -1,8 +1,8 @@
-﻿using ERP.Core.DomainObjects;
-using ERP.Domain.Models.Validations;
+﻿using SalesForce.Core.DomainObjects;
+using SalesForce.Domain.Models.Validations;
 using System;
 
-namespace ERP.Domain.Models
+namespace SalesForce.Domain.Models
 {
     public class FormaPagamento: Entity
     {

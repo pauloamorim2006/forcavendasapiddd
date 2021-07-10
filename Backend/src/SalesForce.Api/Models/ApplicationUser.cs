@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ERP.Api.Models
+namespace SalesForce.Api.Models
 {
     public class ApplicationUser : IdentityUser
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace ERP.Domain.Models.Validations.Documentos
+namespace SalesForce.Domain.Models.Validations.Documentos
 {
     public class CpfValidacao
     {

@@ -1,8 +1,8 @@
-﻿using ERP.Domain.Models;
+﻿using SalesForce.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ERP.Infra.Mappings
+namespace SalesForce.Infra.Mappings
 {
     public class PedidoItemMapping : IEntityTypeConfiguration<PedidoItem>
     {

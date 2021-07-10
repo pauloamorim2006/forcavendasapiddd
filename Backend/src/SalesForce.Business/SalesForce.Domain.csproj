@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SalesForce.Core\SalesForce.Core.csproj" />
+    <ProjectReference Include="..\SalesForce.Core\SalesForce.Core.csproj" />
   </ItemGroup>
 
 </Project>

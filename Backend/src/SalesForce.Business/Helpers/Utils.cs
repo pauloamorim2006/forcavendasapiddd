@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Text;
 
-namespace ERP.Domain.Helpers
+namespace SalesForce.Domain.Helpers
 {
     public static class Utils
     {

@@ -1,9 +1,9 @@
-﻿using ERP.Core.DomainObjects;
-using ERP.Domain.Models.Validations;
+﻿using SalesForce.Core.DomainObjects;
+using SalesForce.Domain.Models.Validations;
 using System;
 using System.Collections.Generic;
 
-namespace ERP.Domain.Models
+namespace SalesForce.Domain.Models
 {
     public class Pedido: Entity, IAggregateRoot
     {
@@ -71,7 +71,7 @@ namespace ERP.Domain.Models
 
         public static class PedidoFactory
         {
-            public static Pedido NovoPedido(Guid id, int codigo, StatusPedido status, Guid clienteId, DateTime data, Guid condicaoPagamentoId, Guid formaPagamentoId, IList<PedidoItem> pedidoItens)
+            public static Pedido Novo(Guid id, int codigo, StatusPedido status, Guid clienteId, DateTime data, Guid condicaoPagamentoId, Guid formaPagamentoId, IList<PedidoItem> pedidoItens)
             {
                 var pedido = new Pedido(id, codigo, status, clienteId, data, condicaoPagamentoId, formaPagamentoId);
 

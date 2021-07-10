@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace ERP.Api.Extensions
+namespace SalesForce.Api.Extensions
 {
     public class ExceptionMiddleware
     {

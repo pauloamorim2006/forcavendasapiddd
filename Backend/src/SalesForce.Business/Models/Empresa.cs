@@ -1,9 +1,9 @@
-﻿using ERP.Core.DomainObjects;
-using ERP.Domain.Models.Validations;
+﻿using SalesForce.Core.DomainObjects;
+using SalesForce.Domain.Models.Validations;
 using SalesForce.Domain.Models;
 using System;
 
-namespace ERP.Domain.Models
+namespace SalesForce.Domain.Models
 {
     public class Empresa: Entity, IAggregateRoot
     {

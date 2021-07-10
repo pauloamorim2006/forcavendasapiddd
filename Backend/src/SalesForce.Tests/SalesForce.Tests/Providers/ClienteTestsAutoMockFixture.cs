@@ -1,9 +1,9 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
-using ERP.Application.Services;
-using ERP.Domain.Models;
-using ERP.Domain.Services;
+using SalesForce.Application.Services;
+using SalesForce.Domain.Models;
+using SalesForce.Domain.Services;
 using Moq.AutoMock;
 using SalesForce.Domain.Models;
 using System;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Domain.Tests.Providers
+namespace SalesForce.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(ClienteAutoMockerCollection))]
     public class ClienteAutoMockerCollection : ICollectionFixture<ClienteTestsAutoMockerFixture>
@@ -23,14 +23,14 @@ namespace ERP.Domain.Tests.Providers
         public ClienteService ClienteService;
         public AutoMocker Mocker;
 
-        public ERP.Domain.Models.Cliente GerarClienteValido()
+        public SalesForce.Domain.Models.Cliente GerarClienteValido()
         {
             return GerarClientes(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Domain.Models.Cliente> ObterClientesVariados()
+        public IEnumerable<SalesForce.Domain.Models.Cliente> ObterClientesVariados()
         {
-            var clientes = new List<ERP.Domain.Models.Cliente>();
+            var clientes = new List<SalesForce.Domain.Models.Cliente>();
 
             clientes.AddRange(GerarClientes(50, true).ToList());
             clientes.AddRange(GerarClientes(50, false).ToList());
@@ -38,11 +38,11 @@ namespace ERP.Domain.Tests.Providers
             return clientes;
         }
 
-        public IEnumerable<ERP.Domain.Models.Cliente> GerarClientes(int quantidade, bool ativo)
+        public IEnumerable<SalesForce.Domain.Models.Cliente> GerarClientes(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var clientes = new Faker<ERP.Domain.Models.Cliente>("pt_BR")
+            var clientes = new Faker<SalesForce.Domain.Models.Cliente>("pt_BR")
                 .CustomInstantiator(f => new Cliente
                 (
                     Guid.NewGuid(),
@@ -70,11 +70,11 @@ namespace ERP.Domain.Tests.Providers
             return clientes.Generate(quantidade);
         }
 
-        public ERP.Domain.Models.Cliente GerarClienteInvalido()
+        public SalesForce.Domain.Models.Cliente GerarClienteInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
-            var cliente = new Faker<ERP.Domain.Models.Cliente>("pt_BR")
+            var cliente = new Faker<SalesForce.Domain.Models.Cliente>("pt_BR")
                 .CustomInstantiator(f => new Cliente
                 (
                     Guid.Empty,

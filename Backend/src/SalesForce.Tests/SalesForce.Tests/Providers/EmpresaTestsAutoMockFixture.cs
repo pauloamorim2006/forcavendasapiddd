@@ -1,8 +1,8 @@
 ﻿using Bogus;
 using Bogus.DataSets;
 using Bogus.Extensions.Brazil;
-using ERP.Application.Services;
-using ERP.Domain.Models;
+using SalesForce.Application.Services;
+using SalesForce.Domain.Models;
 using Moq.AutoMock;
 using SalesForce.Domain.Models;
 using System;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Domain.Tests.Providers
+namespace SalesForce.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(EmpresaAutoMockerCollection))]
     public class EmpresaAutoMockerCollection : ICollectionFixture<EmpresaTestsAutoMockerFixture>
@@ -22,14 +22,14 @@ namespace ERP.Domain.Tests.Providers
         public EmpresaService EmpresaService;
         public AutoMocker Mocker;
 
-        public ERP.Domain.Models.Empresa GerarRegistroValido()
+        public SalesForce.Domain.Models.Empresa GerarRegistroValido()
         {
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Domain.Models.Empresa> ObterVariados()
+        public IEnumerable<SalesForce.Domain.Models.Empresa> ObterVariados()
         {
-            var list = new List<ERP.Domain.Models.Empresa>();
+            var list = new List<SalesForce.Domain.Models.Empresa>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());
@@ -37,7 +37,7 @@ namespace ERP.Domain.Tests.Providers
             return list;
         }
 
-        public IEnumerable<ERP.Domain.Models.Empresa> GerarList(int quantidade, bool ativo)
+        public IEnumerable<SalesForce.Domain.Models.Empresa> GerarList(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
@@ -67,7 +67,7 @@ namespace ERP.Domain.Tests.Providers
             return list.Generate(quantidade);
         }
 
-        public ERP.Domain.Models.Empresa GerarRegistroInvalido()
+        public SalesForce.Domain.Models.Empresa GerarRegistroInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 

@@ -1,16 +1,16 @@
-﻿using ERP.Api.Extensions;
-using ERP.Application.Services;
-using ERP.Core.Notificacoes;
-using ERP.Domain.Repositories;
-using ERP.Domain.Services;
-using ERP.Infra.Context;
-using ERP.Infra.Repository;
+﻿using SalesForce.Api.Extensions;
+using SalesForce.Application.Services;
+using SalesForce.Core.Notificacoes;
+using SalesForce.Domain.Repositories;
+using SalesForce.Domain.Services;
+using SalesForce.Infra.Context;
+using SalesForce.Infra.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace ERP.Api.Configuration
+namespace SalesForce.Api.Configuration
 {
     public static class DependencyInjectionConfig
     {

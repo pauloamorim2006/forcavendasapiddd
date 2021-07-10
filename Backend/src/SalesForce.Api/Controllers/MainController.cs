@@ -1,11 +1,11 @@
-﻿using ERP.Core.Notificacoes;
-using ERP.Domain.Services;
+﻿using SalesForce.Core.Notificacoes;
+using SalesForce.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Linq;
 
-namespace ERP.Api.Controllers
+namespace SalesForce.Api.Controllers
 {
     [ApiController]
     public abstract class MainController : ControllerBase

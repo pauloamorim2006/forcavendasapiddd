@@ -1,8 +1,8 @@
-﻿using ERP.Core.Data;
-using ERP.Domain.Models;
+﻿using SalesForce.Core.Data;
+using SalesForce.Domain.Models;
 using System;
 
-namespace ERP.Domain.Repositories
+namespace SalesForce.Domain.Repositories
 {
     public interface ICidadeRepository : IRepository<Cidade>
     {

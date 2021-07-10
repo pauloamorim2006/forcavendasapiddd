@@ -1,7 +1,7 @@
-﻿using ERP.Application.Services;
-using ERP.Domain.Models;
-using ERP.Domain.Repositories;
-using ERP.Domain.Tests.Providers;
+﻿using SalesForce.Application.Services;
+using SalesForce.Domain.Models;
+using SalesForce.Domain.Repositories;
+using SalesForce.Domain.Tests.Providers;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ERP.Domain.Tests.Services
+namespace SalesForce.Domain.Tests.Services
 {
     [Collection(nameof(PedidoAutoMockerCollection))]
     public class PedidoServiceTests

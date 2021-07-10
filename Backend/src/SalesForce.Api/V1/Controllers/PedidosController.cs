@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using ERP.Api.Controllers;
-using ERP.Application.ViewModels;
-using ERP.Core.Notificacoes;
-using ERP.Domain.Models;
-using ERP.Domain.Services;
+using SalesForce.Api.Controllers;
+using SalesForce.Application.ViewModels;
+using SalesForce.Core.Notificacoes;
+using SalesForce.Domain.Models;
+using SalesForce.Domain.Services;
 using FastReport;
 using FastReport.Export.PdfSimple;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace ERP.Api.V1.Controllers
+namespace SalesForce.Api.V1.Controllers
 {
     [Authorize]
     [ApiVersion("1.0")]

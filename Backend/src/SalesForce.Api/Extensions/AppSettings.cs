@@ -1,4 +1,4 @@
-﻿namespace ERP.Api.Extensions
+﻿namespace SalesForce.Api.Extensions
 {
     public class AppSettings
     {

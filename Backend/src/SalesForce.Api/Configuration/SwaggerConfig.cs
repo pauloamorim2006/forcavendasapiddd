@@ -10,7 +10,7 @@ using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace ERP.Api.Configuration
+namespace SalesForce.Api.Configuration
 {
     public static class SwaggerConfig
     {
@@ -85,7 +85,7 @@ namespace ERP.Api.Configuration
             {
                 Title = "API",
                 Version = description.ApiVersion.ToString(),
-                Description = "API de comunicação com ERP.",
+                Description = "API de comunicação com SalesForce.",
                 Contact = new OpenApiContact() { Name = "Autor", Email = "admin@admin.com.br" },
                 License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
             };

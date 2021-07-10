@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace ERP.Api
+namespace SalesForce.Api
 {
     public class Program
     {

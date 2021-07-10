@@ -1,13 +1,13 @@
-﻿using ERP.Api.Controllers;
-using ERP.Core.Notificacoes;
-using ERP.Domain.Services;
+﻿using SalesForce.Api.Controllers;
+using SalesForce.Core.Notificacoes;
+using SalesForce.Domain.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ERP.Api.V1.Controllers
+namespace SalesForce.Api.V1.Controllers
 {
     [Authorize]
     [ApiVersion("1.0")]

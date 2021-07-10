@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using ERP.Api.Data;
-using ERP.Api.Extensions;
+using SalesForce.Api.Data;
+using SalesForce.Api.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ERP.Api.Configuration
+namespace SalesForce.Api.Configuration
 {
     public static class IdentityConfig
     {

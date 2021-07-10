@@ -1,6 +1,6 @@
 using AutoMapper;
-using ERP.Api.Configuration;
-using ERP.Infra.Context;
+using SalesForce.Api.Configuration;
+using SalesForce.Infra.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SalesForce.Application.Configuration;
 
-namespace ERP.Api
+namespace SalesForce.Api
 {
     public class Startup
     {

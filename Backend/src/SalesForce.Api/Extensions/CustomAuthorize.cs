@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ERP.Api.Extensions
+namespace SalesForce.Api.Extensions
 {
     public class CustomAuthorization
     {

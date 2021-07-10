@@ -1,10 +1,10 @@
-﻿using ERP.Domain.Services;
+﻿using SalesForce.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace ERP.Api.Extensions
+namespace SalesForce.Api.Extensions
 {
     public class AspNetUser : IUser
     {

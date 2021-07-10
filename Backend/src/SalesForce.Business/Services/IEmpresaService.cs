@@ -1,11 +1,11 @@
-﻿using ERP.Domain.Models;
+﻿using SalesForce.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP.Domain.Services
+namespace SalesForce.Domain.Services
 {
     public interface IEmpresaService
     {

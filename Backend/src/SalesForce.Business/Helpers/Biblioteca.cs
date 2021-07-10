@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ERP.Domain.Helpers
+namespace SalesForce.Domain.Helpers
 {
     public static class Biblioteca
     {

@@ -1,16 +1,16 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Application.Services;
-using ERP.Domain.Models;
-using ERP.Domain.Repositories;
-using ERP.Infra.Repository;
+using SalesForce.Application.Services;
+using SalesForce.Domain.Models;
+using SalesForce.Domain.Repositories;
+using SalesForce.Infra.Repository;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Domain.Tests.Providers
+namespace SalesForce.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(CondicaoPagamentoAutoMockerCollection))]
     public class CondicaoPagamentoAutoMockerCollection : ICollectionFixture<CondicaoPagamentoTestsAutoMockerFixture>
@@ -28,7 +28,7 @@ namespace ERP.Domain.Tests.Providers
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Domain.Models.CondicaoPagamento> ObterVariados()
+        public IEnumerable<SalesForce.Domain.Models.CondicaoPagamento> ObterVariados()
         {
             var list = new List<CondicaoPagamento>();
 
@@ -38,7 +38,7 @@ namespace ERP.Domain.Tests.Providers
             return list;
         }
 
-        public IEnumerable<ERP.Domain.Models.CondicaoPagamento> GerarList(int quantidade, bool ativo)
+        public IEnumerable<SalesForce.Domain.Models.CondicaoPagamento> GerarList(int quantidade, bool ativo)
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 
@@ -53,7 +53,7 @@ namespace ERP.Domain.Tests.Providers
             return list.Generate(quantidade);
         }
 
-        public ERP.Domain.Models.CondicaoPagamento GerarRegistroInvalido()
+        public SalesForce.Domain.Models.CondicaoPagamento GerarRegistroInvalido()
         {
             var genero = new Faker().PickRandom<Name.Gender>();
 

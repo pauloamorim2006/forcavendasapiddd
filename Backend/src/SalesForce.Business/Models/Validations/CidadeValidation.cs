@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ERP.Domain.Models.Validations
+namespace SalesForce.Domain.Models.Validations
 {
     public class CidadeValidation : AbstractValidator<Cidade>
     {

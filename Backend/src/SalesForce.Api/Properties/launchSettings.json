@@ -33,7 +33,7 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
-    "ERP.Api": {
+    "SalesForce.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using ERP.Infra.Context;
+using SalesForce.Infra.Context;
 using Microsoft.EntityFrameworkCore;
-using ERP.Core.Data;
-using ERP.Core.DomainObjects;
+using SalesForce.Core.Data;
+using SalesForce.Core.DomainObjects;
 
-namespace ERP.Infra.Repository
+namespace SalesForce.Infra.Repository
 {
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {

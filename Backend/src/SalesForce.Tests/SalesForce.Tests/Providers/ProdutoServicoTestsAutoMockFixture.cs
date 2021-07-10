@@ -1,13 +1,13 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Application.Services;
+using SalesForce.Application.Services;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Domain.Tests.Providers
+namespace SalesForce.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(ProdutoServicoAutoMockerCollection))]
     public class ProdutoServicoAutoMockerCollection : ICollectionFixture<ProdutoServicoTestsAutoMockerFixture>
@@ -24,9 +24,9 @@ namespace ERP.Domain.Tests.Providers
             return GerarList(1, true).FirstOrDefault();
         }
 
-        public IEnumerable<ERP.Domain.Models.ProdutoServico> ObterVariados()
+        public IEnumerable<SalesForce.Domain.Models.ProdutoServico> ObterVariados()
         {
-            var list = new List<ERP.Domain.Models.ProdutoServico>();
+            var list = new List<SalesForce.Domain.Models.ProdutoServico>();
 
             list.AddRange(GerarList(50, true).ToList());
             list.AddRange(GerarList(50, false).ToList());

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ERP.Domain.Models.Validations
+namespace SalesForce.Domain.Models.Validations
 {
     public class ClienteValidation : AbstractValidator<Cliente>
     {

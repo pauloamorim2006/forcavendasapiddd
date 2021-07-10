@@ -1,14 +1,14 @@
 ﻿using Bogus;
 using Bogus.DataSets;
-using ERP.Application.Services;
-using ERP.Domain.Models;
+using SalesForce.Application.Services;
+using SalesForce.Domain.Models;
 using Moq.AutoMock;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace ERP.Domain.Tests.Providers
+namespace SalesForce.Domain.Tests.Providers
 {
     [CollectionDefinition(nameof(UnidadeAutoMockerCollection))]
     public class UnidadeAutoMockerCollection : ICollectionFixture<UnidadeTestsAutoMockerFixture>

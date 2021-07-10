@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SalesForce.Core\SalesForce.Core.csproj" />
+    <ProjectReference Include="..\SalesForce.Core\SalesForce.Core.csproj" />
     <ProjectReference Include="..\SalesForce.Business\SalesForce.Domain.csproj" />
   </ItemGroup>
 

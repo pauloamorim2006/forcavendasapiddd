@@ -1,10 +1,10 @@
-﻿using ERP.Domain.Models;
-using ERP.Domain.Repositories;
-using ERP.Infra.Context;
+﻿using SalesForce.Domain.Models;
+using SalesForce.Domain.Repositories;
+using SalesForce.Infra.Context;
 using System;
 using System.Linq;
 
-namespace ERP.Infra.Repository
+namespace SalesForce.Infra.Repository
 {
     public class FormaPagamentoRepository : Repository<FormaPagamento>, IFormaPagamentoRepository
     {

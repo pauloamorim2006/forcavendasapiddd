@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace ERP.Domain.Services
+namespace SalesForce.Domain.Services
 {
     public interface IUser
     {

@@ -1,6 +1,6 @@
-﻿using ERP.Application.Services;
-using ERP.Domain.Repositories;
-using ERP.Domain.Tests.Providers;
+﻿using SalesForce.Application.Services;
+using SalesForce.Domain.Repositories;
+using SalesForce.Domain.Tests.Providers;
 using Moq;
 using System;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace ERP.Domain.Tests.Services
+namespace SalesForce.Domain.Tests.Services
 {
     [Collection(nameof(ClienteAutoMockerCollection))]
     public class ClienteServiceTests
@@ -259,7 +259,7 @@ namespace ERP.Domain.Tests.Services
         public async void ClienteService_Buscar_DeveExecutarComSucesso()
         {
             // Arrange
-            Expression<Func<ERP.Domain.Models.Cliente, bool>> predicate = (x) => x.Ativo == true;
+            Expression<Func<SalesForce.Domain.Models.Cliente, bool>> predicate = (x) => x.Ativo == true;
             _clienteTestsAutoMockerFixture.Mocker.GetMock<IClienteRepository>().Setup(c => c.Buscar(predicate))
                 .Returns(Task.FromResult(_clienteTestsAutoMockerFixture.ObterClientesVariados()));
 

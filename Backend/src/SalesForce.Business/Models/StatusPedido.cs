@@ -1,4 +1,4 @@
-﻿namespace ERP.Domain.Models
+﻿namespace SalesForce.Domain.Models
 {
     public enum StatusPedido
     {

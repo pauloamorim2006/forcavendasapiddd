@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\SalesForce.Business\SalesForce.Domain.csproj" />
+    <ProjectReference Include="..\SalesForce.Core\SalesForce.Core.csproj" />
+    <ProjectReference Include="..\SalesForce.Data\SalesForce.Infra.csproj" />
+  </ItemGroup>
+
+</Project>

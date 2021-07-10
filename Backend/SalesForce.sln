@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesForce.Api", "src\Sales
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesForce.Domain.Tests", "src\SalesForce.Tests\SalesForce.Tests\SalesForce.Domain.Tests.csproj", "{11D3532B-0EA8-4AEE-9776-144693C41BB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Core", "SalesForce.Core\SalesForce.Core.csproj", "{C0F4B483-6387-457A-BC9F-0AC5131CF807}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Core", "src\SalesForce.Core\SalesForce.Core.csproj", "{C0F4B483-6387-457A-BC9F-0AC5131CF807}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Application", "SalesForce.Application\SalesForce.Application.csproj", "{A278B00C-5DE2-4052-BB82-552E303C27E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.Application", "src\SalesForce.Application\SalesForce.Application.csproj", "{A278B00C-5DE2-4052-BB82-552E303C27E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

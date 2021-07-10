@@ -1,6 +1,6 @@
 ﻿using System.Xml.Serialization;
 
-namespace ERP.Domain.Models
+namespace SalesForce.Domain.Models
 {
     public enum Estado
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ERP.Domain.Helpers
+namespace SalesForce.Domain.Helpers
 {
     public static class DateTimeExtention
     {
